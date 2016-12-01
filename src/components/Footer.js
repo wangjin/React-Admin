@@ -8,8 +8,7 @@ import React from "react";
 
 export default class Footer extends React.Component {
   render() {
-    let date = new Date();
-    let currentYear = date.getFullYear(); //获取当前年份
+    let currentYear = new Date().getFullYear(); //获取当前年份
 
     return (
       <div className="footer">
