@@ -1,0 +1,25 @@
+/* Base Application Styles */
+html,body {
+  color: #fff;
+  height: 100%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.index{
+  width: 100%;
+  height: 100%;
+}
+
+.index .notice {
+  margin: 20px auto;
+  padding: 15px 0;
+  text-align: center;
+  border: 1px solid #000;
+  background: #666;
+  border-radius: 4px;
+  display: block;
+}
