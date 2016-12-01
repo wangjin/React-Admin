@@ -6,18 +6,34 @@ import React from "react";
 
 export default class Header extends React.Component {
 
-  fetchData(){
-    fetch("http://localhost:8080/emalldemo/ProductsServlet?action=productlist")
-      .then(response => response.text())
-      .then(responseText => {
-        alert(responseText);
-      })
-      .catch((error) => {
+
+  getData() {
+    return (
+      fetch("http://61.160.137.78:8080/edp4.0/druid/sql.json", {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        mode: 'no-cors'
+      }).then((response) => {
+        if (response.ok) {
+          response.json().then((data) => {
+            alert(data)
+          });
+        } else {
+          alert(response.status);
+        }
+      }).catch((error) => {
         alert("error");
-      });
+      })
+    );
   }
 
+
   render() {
+
+    var data = this.getData();
+
     return (
       <div>
         <div></div>
