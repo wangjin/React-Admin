@@ -8,27 +8,30 @@ export default class Header extends React.Component {
 
 
   getData() {
-    return (
-      fetch("http://61.160.137.78:8080/edp4.0/druid/sql.json", {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        mode: 'no-cors'
-      }).then((response) => {
-        if (response.ok) {
-          response.json().then((data) => {
-            alert(data)
-          });
-        } else {
-          alert(response.status);
-        }
-      }).catch((error) => {
-        alert("error");
+    fetch("http://127.0.0.1:8080/saveUser", {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      method: "POST",
+      body: JSON.stringify({
+        name: 'aaa',
+        age: '1'
       })
-    );
+    }).then(response => {
+      if (response.ok) {
+        response.json().then(
+          data => {
+            alert(data.name);
+          }
+        )
+      } else {
+        alert("错误码:" + response.status);
+      }
+    }).catch(error => {
+      alert(error);
+    })
   }
-
 
   render() {
 
@@ -38,7 +41,7 @@ export default class Header extends React.Component {
       <div>
         <div></div>
       </div>
-    );
+    )
   }
 }
 
