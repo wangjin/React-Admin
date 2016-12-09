@@ -25,11 +25,19 @@ export default class Menu extends React.Component {
 
   render() {
 
-    let menuItems = this.state.menudata.map(menu => {
-      return (
-        <MenuItem name={menu.name} url={menu.url}/>
-      );
-    });
-    return (<div>{menuItems}</div>);
+    /*let menuItems = this.state.menudata.map(menu => {
+     return (
+     <MenuItem name={menu.name} url={menu.url}/>
+     );
+     });*/
+    return (
+      <div>
+        {this.state.menudata.map(menu => {
+          return (
+            <MenuItem name={menu.name} url={menu.url}/>
+          )
+        })}
+      </div>
+    )
   }
 }

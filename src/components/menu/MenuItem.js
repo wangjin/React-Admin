@@ -8,6 +8,6 @@ import React from 'react'
 export default class MenuItem extends React.Component {
 
   render() {
-    return (<div><a href={this.props.url}>{this.props.name}</a></div>);
+    return (<div><a href={this.props.url}>{this.props.name}</a></div>)
   }
 }
