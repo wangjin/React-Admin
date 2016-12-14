@@ -2,40 +2,13 @@
  * 页面头部JS
  * Created by wangjin on 2016/12/1.
  */
-import React from "react";
+import React from 'react';
 
 export default class Header extends React.Component {
 
-
-  getData() {
-    fetch("http://127.0.0.1:8080/saveUser", {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      method: "POST",
-      body: JSON.stringify({
-        name: 'aaa',
-        age: '1'
-      })
-    }).then(response => {
-      if (response.ok) {
-        response.json().then(
-          data => {
-            alert(data.name);
-          }
-        )
-      } else {
-        alert("错误码:" + response.status);
-      }
-    }).catch(error => {
-      alert(error);
-    })
-  }
-
   render() {
 
-    var data = this.getData();
+    // var data = this.getData();
 
     return (
       <div>
@@ -50,6 +23,32 @@ class Test extends React.Component {
   constructor(props) {
     super(props);
     this.state = {name: '按钮'}
+  }
+
+  getData() {
+    fetch('http://127.0.0.1:8080/saveUser', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        name: 'aaa',
+        age: '1'
+      })
+    }).then(response => {
+      if (response.ok) {
+        response.json().then(
+          data => {
+            alert(data.name);
+          }
+        )
+      } else {
+        alert('错误码:' + response.status);
+      }
+    }).catch(error => {
+      alert(error);
+    })
   }
 
   handleClick() {

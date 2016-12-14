@@ -1,9 +1,8 @@
 /**
  * Created by 王金 on 2016/12/9.
  */
-
-import React from 'react'
-import MenuItem from './MenuItem'
+import React from "react";
+import MenuItem from "./MenuItem";
 
 export default class Menu extends React.Component {
   constructor() {
@@ -31,12 +30,13 @@ export default class Menu extends React.Component {
      );
      });*/
     return (
-      <div>
-        {this.state.menudata.map(menu => {
+      <div>{
+        this.state.menudata.map(menu => {
           return (
             <MenuItem name={menu.name} url={menu.url}/>
           )
-        })}
+        })
+      }
       </div>
     )
   }
