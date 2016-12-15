@@ -5,11 +5,10 @@ require('styles/App.css');
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import SideMenu from './SideMenu';
 import Button from 'antd/lib/button';
 
 import 'antd/dist/antd.css';
-
-let yeomanImage = require('../images/yeoman.png');
 
 export default class AppComponent extends React.Component {
 
@@ -18,9 +17,8 @@ export default class AppComponent extends React.Component {
   render() {
     return (
       <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
         <Header/>
+        <SideMenu/>
         <Footer/>
         <Button type="primary">Primary</Button>
 
