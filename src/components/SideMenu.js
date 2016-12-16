@@ -1,6 +1,8 @@
 /**
  * Created by 王金 on 2016/12/9.
  */
+require('styles/Menu.css');
+
 import React from 'react';
 import Menu from 'antd/lib/menu';
 import Icon from 'antd/lib/icon';
@@ -19,6 +21,7 @@ export default class SideMenu extends React.Component {
         {
           'title': 'Menu1',
           'key': 'menu1',
+          'iconType':'mail',
           'spin': false,
           'subMenu': [
             {
@@ -38,6 +41,7 @@ export default class SideMenu extends React.Component {
         {
           'title': 'Menu2',
           'key': 'menu2',
+          'iconType':'mail',
           'spin': false,
           'subMenu': [
             {
@@ -53,16 +57,19 @@ export default class SideMenu extends React.Component {
         {
           'title': 'Menu3',
           'key': 'menu3',
+          'iconType':'mail',
           'spin': false
         },
         {
           'title': 'Menu4',
           'key': 'menu4',
+          'iconType':'apple',
           'spin': false
         },
         {
           'title': 'Menu5',
           'key': 'menu5',
+          'iconType':'mail',
           'spin': false
         }
       ]
@@ -111,7 +118,7 @@ export default class SideMenu extends React.Component {
           onOpenChange={this.onOpenChange.bind(this)}
           onClick={this.handleClick.bind(this)}
         >
-          <SubMenu key={menu.key} title={<span><Icon type="mail" spin={menu.spin}/><span>{menu.title}</span></span>}>
+          <SubMenu key={menu.key} title={<span><Icon type={menu.iconType} spin={menu.spin} className="icon_color"/><span>{menu.title}</span></span>}>
             {menu.subMenu ? this.renderMenuItem(menu.subMenu) : null}
           </SubMenu>
           <Menu.Divider/>
