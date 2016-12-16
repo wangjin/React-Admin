@@ -2,17 +2,41 @@
  * 页面头部JS
  * Created by wangjin on 2016/12/1.
  */
+require('styles/Header.css');
 import React from 'react';
+import Popconfirm from 'antd/lib/popconfirm';
+import Button from 'antd/lib/button';
+
+import 'antd/dist/antd.css';
 
 export default class Header extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {
+      iconLoading: false
+    }
+  }
+
+  enterIconLoading() {
+    this.setState({iconLoading: true});
+  }
+
   render() {
-
-    // var data = this.getData();
-
     return (
-      <div>
-        <div></div>
+      <div className="header">
+        <div className="admin-title">React Admin</div>
+        <div className="user-info">
+          <Popconfirm placement="bottom" title="退出登录" ookText="确定">
+            <Button
+              type="primary"
+              icon="poweroff"
+              loading={this.state.iconLoading}
+              onClick={this.enterIconLoading.bind(this)}>
+              登出
+            </Button>
+          </Popconfirm>
+        </div>
       </div>
     )
   }
@@ -56,11 +80,12 @@ class Test extends React.Component {
   }
 
   render() {
-    return (<div>
-      <input ref="buttonInput" type="text"/>
-      <br/>
-      <button onClick={this.handleClick.bind(this)}>{this.state.name}</button>
-
-    </div>);
+    return (
+      <div className="">
+        <input ref="buttonInput" type="text"/>
+        <br/>
+        <button onClick={this.handleClick.bind(this)}>{this.state.name}</button>
+      </div>
+    );
   }
 }

@@ -12,16 +12,12 @@ import 'antd/dist/antd.css';
 
 export default class AppComponent extends React.Component {
 
-
-
   render() {
     return (
       <div className="index">
         <Header/>
         <SideMenu/>
         <Footer/>
-        <Button type="primary">Primary</Button>
-
       </div>
     );
   }
