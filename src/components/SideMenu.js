@@ -118,7 +118,7 @@ export default class SideMenu extends React.Component {
           onOpenChange={this.onOpenChange.bind(this)}
           onClick={this.handleClick.bind(this)}
         >
-          <SubMenu key={menu.key} title={<span><Icon type={menu.iconType} spin={menu.spin} className="icon_color"/><span>{menu.title}</span></span>}>
+          <SubMenu key={menu.key} title={<span><Icon type={menu.iconType} spin={menu.spin} className="icon-color"/><span>{menu.title}</span></span>}>
             {menu.subMenu ? this.renderMenuItem(menu.subMenu) : null}
           </SubMenu>
           <Menu.Divider/>
