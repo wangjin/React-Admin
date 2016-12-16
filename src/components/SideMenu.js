@@ -23,15 +23,15 @@ export default class SideMenu extends React.Component {
           'subMenu': [
             {
               'title': 'subMenu1',
-              'key': 'subMenu1',
+              'key': 'subMenu1'
             },
             {
               'title': 'subMenu2',
-              'key': 'subMenu2',
+              'key': 'subMenu2'
             },
             {
               'title': 'subMenu3',
-              'key': 'subMenu3',
+              'key': 'subMenu3'
             }
           ]
         },
@@ -42,11 +42,11 @@ export default class SideMenu extends React.Component {
           'subMenu': [
             {
               'title': 'subMenu21',
-              'key': 'subMenu21',
+              'key': 'subMenu21'
             },
             {
               'title': 'subMenu22',
-              'key': 'subMenu22',
+              'key': 'subMenu22'
             }
           ]
         },
@@ -71,7 +71,7 @@ export default class SideMenu extends React.Component {
 
   handleClick(e) {
     this.setState({current: e.key});
-    console.log(e);
+    // console.log(e);
   }
 
   onOpenChange(openKeys) {
@@ -91,7 +91,7 @@ export default class SideMenu extends React.Component {
 
   getAncestorKeys(key) {
     const map = {
-      sub3: ['sub2'],
+      sub3: ['sub2']
     };
     return map[key] || [];
   }
