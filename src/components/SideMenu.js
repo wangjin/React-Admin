@@ -28,13 +28,27 @@ export default class SideMenu extends React.Component {
             {
               'title': 'subMenu2',
               'key': 'subMenu2',
+            },
+            {
+              'title': 'subMenu3',
+              'key': 'subMenu3',
             }
           ]
         },
         {
           'title': 'Menu2',
           'key': 'menu2',
-          'spin': false
+          'spin': false,
+          'subMenu': [
+            {
+              'title': 'subMenu21',
+              'key': 'subMenu21',
+            },
+            {
+              'title': 'subMenu22',
+              'key': 'subMenu22',
+            }
+          ]
         },
         {
           'title': 'Menu3',
@@ -82,9 +96,12 @@ export default class SideMenu extends React.Component {
     return map[key] || [];
   }
 
-  render() {
-
-    const menuItems = this.state.menuData.map(menu => {
+  /**
+   * 渲染菜单
+   * @param menuData
+   */
+  renderMenu(menuData) {
+    return menuData.map((menu) => {
       return (
         <Menu
           mode="inline"
@@ -95,18 +112,28 @@ export default class SideMenu extends React.Component {
           onClick={this.handleClick.bind(this)}
         >
           <SubMenu key={menu.key} title={<span><Icon type="mail" spin={menu.spin}/><span>{menu.title}</span></span>}>
-            <Menu.Item key="1">Option 1</Menu.Item>
-            <Menu.Item key="2">Option 2</Menu.Item>
-            <Menu.Item key="3">Option 3</Menu.Item>
-            <Menu.Item key="4">Option 4</Menu.Item>
+            {menu.subMenu ? this.renderMenuItem(menu.subMenu) : null}
           </SubMenu>
           <Menu.Divider/>
-        </Menu>
-      );
+        </Menu>);
     });
+  }
+
+  /**
+   * 渲染菜单项
+   * @param menuItems
+   */
+  renderMenuItem(menuItems) {
+    return menuItems.map((item) => {
+      return (<Menu.Item key={item.key}>{item.title}</Menu.Item>);
+    });
+  }
+
+  render() {
+
     return (
       <div>
-        {menuItems}
+        {this.renderMenu(this.state.menuData)}
       </div>
     )
   }
