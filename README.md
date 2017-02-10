@@ -1,4 +1,4 @@
-# 使用ReactJS开发一套后台管理模板
+# 使用ReactJS开发后台管理模板
 
 - [ANT DESIGN](https://ant.design/): 使用蚂蚁金服ANT DESIGN UI组件。
 
